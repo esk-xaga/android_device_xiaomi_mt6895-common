@@ -336,6 +336,9 @@ vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
+vendor/lib64/lib_android_keymaster_keymint_utils.so:vendor/lib64/lib_android_keymaster_keymint_utils-v31.so;FIX_SONAME
+vendor/lib64/libkeymaster_portable.so:vendor/lib64/libkeymaster_portable-v31.so;FIX_SONAME
+vendor/lib64/libkeymint.so:vendor/lib64/libkeymint-v31.so;FIX_SONAME
 
 # Media (C2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
