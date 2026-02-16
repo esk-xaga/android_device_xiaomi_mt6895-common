@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
-$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 TARGET_EXCLUDES_AUDIOFX := true
 
@@ -167,7 +167,7 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/input_suspend)
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
-$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -320,7 +320,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
-$(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,true)
+$(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
@@ -332,7 +332,7 @@ PRODUCT_PACKAGES += \
     vibratorfeature-wrapper
 
 # Wi-Fi
-$(call soong_config_set,wpa_supplicant_8,board_wlan_mediatek_stability,true)
+$(call soong_config_set_bool,wpa_supplicant_8,board_wlan_mediatek_stability,true)
 
 PRODUCT_PACKAGES += \
     wpa_supplicant \
