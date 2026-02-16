@@ -72,11 +72,16 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
 
 # Kernel
+HOST_PREBUILT_TAG ?= linux-x86
+CLANG_FALLBACK_VERSION := r416183b
+
+CLANG_BASE := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)
+LATEST_CLANG_PATH := $(lastword $(sort $(wildcard $(CLANG_BASE)/clang-r*)))
+TARGET_KERNEL_CLANG_PATH := $(strip $(if $(strip $(LATEST_CLANG_PATH)),$(LATEST_CLANG_PATH),$(CLANG_BASE)/clang-$(CLANG_FALLBACK_VERSION)))
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6895
-TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
 KERNEL_LTO := thin
 TARGET_KERNEL_CONFIG := \
 	gki_defconfig \
