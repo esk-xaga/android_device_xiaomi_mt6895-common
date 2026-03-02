@@ -163,20 +163,7 @@ PRODUCT_PACKAGES += \
     lib_android_keymaster_keymint_utils.vendor \
     libcppbor_external.vendor \
     libkeymint.vendor
-
-# Light
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/input_suspend)
-$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
-$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
-
+    
 # Media
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -189,11 +176,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlayMT6895 \
     SystemUIOverlayMT6895 \
     WifiResOverlayMT6895
-
-PRODUCT_PACKAGES += \
-    LineageApertureOverlayMT6895 \
-    LineageSettingsOverlayMT6895 \
-    LineageSDKOverlayMT6895
 
 # Radio
 PRODUCT_COPY_FILES += \
