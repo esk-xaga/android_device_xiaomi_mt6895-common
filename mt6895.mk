@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.xiaomi
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
@@ -175,7 +179,8 @@ PRODUCT_PACKAGES += \
     TelephonyOverlayMT6895 \
     SettingsOverlayMT6895 \
     SystemUIOverlayMT6895 \
-    WifiResOverlayMT6895
+    WifiResOverlayMT6895 \
+    MikuApertureOverlayMT6895
 
 # Radio
 PRODUCT_COPY_FILES += \
@@ -260,7 +265,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
+    android.hardware.power-service.pixel-libperfmgr \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     libmtkperf_client_vendor \
     libmtkperf_client
@@ -295,7 +300,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/pixel \
     hardware/google/interfaces \
-    hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libaedv \
     hardware/mediatek/libmtkperf_client \

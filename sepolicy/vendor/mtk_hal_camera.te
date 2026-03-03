@@ -3,8 +3,9 @@ type vendor_camera_data_file, data_file_type, file_type;
 
 r_dir_file(mtk_hal_camera, camera_persist_file)
 
-rw_dir_file(mtk_hal_camera, vendor_camera_data_file)
-rw_dir_file(mtk_hal_camera, sysfs_therm)
-
+allow mtk_hal_camera vendor_camera_data_file:dir r_dir_perms;
+allow mtk_hal_camera vendor_camera_data_file:file rw_file_perms;
+allow mtk_hal_camera sysfs_therm:dir r_dir_perms;
+allow mtk_hal_camera sysfs_therm:file rw_file_perms;
 allow mtk_hal_camera camera_persist_file:file r_file_perms;
 allow mtk_hal_camera vendor_camera_data_file:file rw_file_perms;
